@@ -12,7 +12,7 @@ module "eks" {
   source = "./modules/eks"
 
   env        = var.env
-  subnet_ids = var.subnets
+  subnets    = var.subnets
 
 }
 
