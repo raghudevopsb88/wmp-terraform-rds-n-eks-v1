@@ -34,3 +34,13 @@ resource "helm_release" "argocd" {
   ]
 }
 
+resource "helm_release" "kube-stack" {
+
+  depends_on = [null_resource.kube-config]
+
+  name       = "kubestack"
+  repository = "https://prometheus-community.github.io/helm-charts"
+  chart      = "kube-prometheus-stack"
+
+}
+
