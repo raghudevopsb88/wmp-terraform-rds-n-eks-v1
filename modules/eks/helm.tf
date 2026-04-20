@@ -41,6 +41,11 @@ resource "helm_release" "kube-stack" {
   name       = "kubestack"
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "kube-prometheus-stack"
-
+  set = [
+    {
+      name  = "prometheus.service.type"
+      value = "LoadBalancer"
+    }
+  ]
 }
 
