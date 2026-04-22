@@ -49,3 +49,12 @@ resource "helm_release" "kube-stack" {
   ]
 }
 
+resource "helm_release" "file-beat" {
+
+  depends_on = [null_resource.kube-config]
+
+  name       = "filebeat"
+  repository = "https://helm.elastic.co"
+  chart      = "filebeat"
+}
+
