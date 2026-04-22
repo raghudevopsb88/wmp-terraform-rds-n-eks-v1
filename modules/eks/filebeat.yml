@@ -17,5 +17,5 @@ daemonset:
             - logs_path:
                 logs_path: "/var/log/containers/"
       output.logstash:
-        hosts: 'elk-internal.rdevopsb85.online:5044'
+        hosts: '172.31.69.93:5044'
 
